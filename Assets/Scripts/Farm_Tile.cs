@@ -13,10 +13,7 @@ public class Farm_Tile : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && _grown) // Harvest the plant if grown
-        {
-            HarvestPlant();
-        }
+        
     }
 
     public void Planting() // Plants the plant
@@ -72,6 +69,14 @@ public class Farm_Tile : MonoBehaviour
             _plant = temp.GetComponent<Plant>();
             Planting();
 
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        if (_grown)
+        {
+            HarvestPlant();
         }
     }
 }

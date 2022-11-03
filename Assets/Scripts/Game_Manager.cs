@@ -12,9 +12,21 @@ public class Game_Manager : MonoBehaviour
 
     private float _timePassed;
 
+    public int plantsInGame, dishesInGame;
+    public static Dictionary<int, int> plants = new Dictionary<int, int>();
+    public static Dictionary<int, int> dishes = new Dictionary<int, int>();
+
     void Start()
     {
-        
+        for(int i = 0; i < plantsInGame; i++)
+        {
+            plants.Add(i, 0);
+        }
+
+        for (int i = 0; i < dishesInGame; i++)
+        {
+            dishes.Add(i, 0);
+        }
     }
     void Update()
     {

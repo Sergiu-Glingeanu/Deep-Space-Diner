@@ -58,6 +58,7 @@ public class Farm_Tile : MonoBehaviour
         Destroy(_plant.gameObject);
         empty = true;
         StopCoroutine(GrowPlant());
+        Game_Manager.plants[_plant.plantID] += 1;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

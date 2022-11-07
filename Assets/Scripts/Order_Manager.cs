@@ -51,7 +51,8 @@ public class Order_Manager : MonoBehaviour
         {
             int chosenDish = Random.Range(0, _tempList.Count);                                  // Choses random dish from available ones
             int amount = Random.Range(1, maxAmountDishes);                                      // Choses random amount of the dish
-            ci.order.Add(_tempList[chosenDish].GetComponent<Dish_Info>().dishID, amount);       // Adds the dish to the character dictionary with the amount wanted
+            ci.order.Add(_tempList[chosenDish].GetComponent<Dish_Info>().dishID, amount);        // Adds the dish to the character dictionary with the amount wanted
+            ci.dishIDs.Add(_tempList[chosenDish].GetComponent<Dish_Info>().dishID);             // Adds the dish ID to a list for cheking if the player can complete order
             ci.dishes[i].gameObject.SetActive(true);                                            // Activates the Image object in the character prefab
             ci.dishes[i].sprite = _tempList[chosenDish].GetComponent<Dish_Info>().dishImage;    // Changes the image to the selected dish image
             ci.dishAmount[i].text = amount.ToString();                                          // Changes the text beside the image to show how many the customer wants

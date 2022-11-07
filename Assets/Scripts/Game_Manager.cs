@@ -18,6 +18,8 @@ public class Game_Manager : MonoBehaviour
 
     public List<GameObject> dishesPrefabs;
 
+    public Grid grid;
+
     void Start()
     {
         for(int i = 0; i < plantsInGame; i++)

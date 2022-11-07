@@ -23,10 +23,28 @@ public class Cooking_Manager : MonoBehaviour
     {
         if (queue.Count < maxQueue)
         {
-            images[queue.Count].sprite = gm.dishesPrefabs[dishID].GetComponent<Dish_Info>().dishImage;
-            images[queue.Count].gameObject.SetActive(true);
-            queue.Add(gm.dishesPrefabs[dishID]);
-            if (queue.Count < 2) StartCoroutine(CookDishes());
+            bool hasEnough = true;
+            Dish_Info di = gm.dishesPrefabs[dishID].GetComponent<Dish_Info>();
+            for (int i = 0; i < di.plantID.Length; i++)
+            {
+                if (Game_Manager.plants[di.plantID[i]] < di.amount[i])
+                {
+                    hasEnough = false;
+                }
+            }
+
+            if (hasEnough)
+            {
+                images[queue.Count].sprite = di.dishImage;
+                images[queue.Count].gameObject.SetActive(true);
+                queue.Add(gm.dishesPrefabs[dishID]);
+                if (queue.Count < 2) StartCoroutine(CookDishes());
+
+                for (int i = 0; i < di.plantID.Length; i++)
+                {
+                    Game_Manager.plants[di.plantID[i]] -= di.amount[i];
+                }
+            }
         }
     }
 

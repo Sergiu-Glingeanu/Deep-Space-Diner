@@ -9,7 +9,7 @@ public class Farm_Tile : MonoBehaviour
     private float _timePassed;
     private int _currentStage;
     private bool _grown;
-    private Plant _plant;
+    public Plant plant;
 
     void Update()
     {
@@ -29,22 +29,22 @@ public class Farm_Tile : MonoBehaviour
         while (!empty)
         {
             _timePassed += Time.deltaTime;
-            if (_timePassed >= _plant.growthTime && !_grown) // Progresses to next stage of growth
+            if (_timePassed >= plant.growthTime && !_grown) // Progresses to next stage of growth
             {
                 _timePassed = 0f;
                 _currentStage += 1;
-                _plant.sr.sprite = _plant.stages[_currentStage];
+                plant.sr.sprite = plant.stages[_currentStage];
             }
 
-            if (_currentStage == _plant.stages.Length - 1 && !_grown) // checks if its grown
+            if (_currentStage == plant.stages.Length - 1 && !_grown) // checks if its grown
             {
                 _grown = true;
                 _timePassed = 0f;
             }
 
-            if (_grown && _timePassed > _plant.wiltTime) // Plant will die if not harvested in time
+            if (_grown && _timePassed > plant.wiltTime) // Plant will die if not harvested in time
             {
-                Destroy(_plant.gameObject);
+                Destroy(plant.gameObject);
                 empty = true;
                 break;
             }
@@ -55,10 +55,10 @@ public class Farm_Tile : MonoBehaviour
 
     public void HarvestPlant()
     {
-        Destroy(_plant.gameObject);
+        Destroy(plant.gameObject);
         empty = true;
         StopCoroutine(GrowPlant());
-        Game_Manager.plants[_plant.plantID] += 1;
+        Game_Manager.plants[plant.plantID] += 1;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -67,7 +67,7 @@ public class Farm_Tile : MonoBehaviour
         {
             empty = false;
             GameObject temp = Instantiate(collision.gameObject.GetComponent<SeedBag>().plant, transform);
-            _plant = temp.GetComponent<Plant>();
+            plant = temp.GetComponent<Plant>();
             Planting();
 
         }

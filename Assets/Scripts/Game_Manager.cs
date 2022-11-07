@@ -16,6 +16,8 @@ public class Game_Manager : MonoBehaviour
     public static Dictionary<int, int> plants = new Dictionary<int, int>();
     public static Dictionary<int, int> dishes = new Dictionary<int, int>();
 
+    public List<GameObject> dishesPrefabs;
+
     void Start()
     {
         for(int i = 0; i < plantsInGame; i++)

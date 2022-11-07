@@ -208,7 +208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1269378539479211489
 RectTransform:
   m_ObjectHideFlags: 0
@@ -454,11 +454,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a0679f39d1705e42bbb2903a12e66aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dish1: {fileID: 3902625222955740487}
-  dish2: {fileID: 1722437155250726700}
   characterPic: {fileID: 449706191514910387}
-  dish1Amount: {fileID: 8563798724768589791}
-  dish2Amount: {fileID: 8135327704508583126}
+  dishes:
+  - {fileID: 3902625222955740487}
+  - {fileID: 1722437155250726700}
+  dishAmount:
+  - {fileID: 8563798724768589791}
+  - {fileID: 8135327704508583126}
+  orderDuration: 0
+  om: {fileID: 0}
+  orderLocation: 0
 --- !u!1 &7834711254270757575
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7868274133385069380
 RectTransform:
   m_ObjectHideFlags: 0

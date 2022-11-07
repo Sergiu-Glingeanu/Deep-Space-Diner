@@ -6,12 +6,15 @@ using TMPro;
 
 public class Character_Info : MonoBehaviour
 {
-    public Image dish1, dish2, characterPic;
-    public TextMeshProUGUI dish1Amount, dish2Amount;
+    public Image characterPic;
+    public Image[] dishes;
+    public TextMeshProUGUI[] dishAmount;
 
     public int orderDuration;
     public Order_Manager om;
     public int orderLocation;
+
+    public Dictionary<int, int> order = new Dictionary<int, int>();
 
     private float _timePassed;
 

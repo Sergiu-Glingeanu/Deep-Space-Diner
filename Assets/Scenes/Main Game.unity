@@ -1312,8 +1312,8 @@ MonoBehaviour:
   allowedDishes:
   - {fileID: 7909478019088878639, guid: 3d6b1e9a400ae3845bbf372180ca3fd3, type: 3}
   characterPrefab: {fileID: 6937370474542710154, guid: a9568be2df87e174d8d6180bcb6ddc0f, type: 3}
-  maxDishes: 1
-  maxAmountDishes: 2
+  maxDishes: 2
+  maxAmountDishes: 5
   maxOrders: 3
   timeToGetAnOrder: 5
   maxOrderDuration: 30
@@ -1503,6 +1503,8 @@ MonoBehaviour:
   nightUI: {fileID: 1038620531}
   plantsInGame: 1
   dishesInGame: 0
+  dishesPrefabs:
+  - {fileID: 7909478019088878639, guid: 3d6b1e9a400ae3845bbf372180ca3fd3, type: 3}
 --- !u!4 &1493314289
 Transform:
   m_ObjectHideFlags: 0

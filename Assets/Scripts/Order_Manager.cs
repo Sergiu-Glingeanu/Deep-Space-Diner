@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Order_Manager : MonoBehaviour
 {
@@ -39,12 +40,13 @@ public class Order_Manager : MonoBehaviour
 
     public void CreateNewOrder()
     {
-        GameObject temp = Instantiate(characterPrefab, orderLocations[_currentOrders.Count]);   // Instantiates the order object
-        temp.transform.position = orderLocations[_currentOrders.Count].position;                // Moves it to the right position
-        Character_Info ci = temp.GetComponent<Character_Info>();                                // Gets a reference to the character info script
-        ci.om = this;                                                                           // gives the character a reference to this script
-        ci.orderDuration = maxOrderDuration;                                                    // Gives the order a time limit
-        ci.orderLocation = _currentOrders.Count;                                                // puts the order in a list that tracks the locations of orders
+        GameObject temp = Instantiate(characterPrefab, orderLocations[_currentOrders.Count]);           // Instantiates the order object
+        temp.transform.position = orderLocations[_currentOrders.Count].position;                        // Moves it to the right position
+        Character_Info ci = temp.GetComponent<Character_Info>();                                        // Gets a reference to the character info script
+        ci.om = this;                                                                                   // gives the character a reference to this script
+        ci.orderDuration = maxOrderDuration;                                                            // Gives the order a time limit
+        ci.orderLocation = _currentOrders.Count;                                                        // puts the order in a list that tracks the locations of orders
+        ci.characterPic.sprite = characterImages[Random.Range(0, characterImages.Count)];               // Give the order a random Character image
         
 
         for (int i = 0; i < maxDishes; i++) // Loop to select a random dish for each slot

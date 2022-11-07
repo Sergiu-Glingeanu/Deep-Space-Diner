@@ -19,6 +19,7 @@ public class Game_Manager : MonoBehaviour
     public List<GameObject> dishesPrefabs;
 
     public Grid grid;
+    public Transform clock;
 
     void Start()
     {
@@ -37,6 +38,8 @@ public class Game_Manager : MonoBehaviour
         if (dayTime)
         {
             _timePassed += Time.deltaTime;
+
+            clock.rotation = Quaternion.Euler(clock.rotation.x, clock.rotation.y, 184f + ((_timePassed / (float)dayDuraton)) * 360f);
             if (_timePassed >= dayDuraton)
             {
                 EndDay();

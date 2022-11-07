@@ -29,6 +29,11 @@ public class Character_Info : MonoBehaviour, IPointerDownHandler
         {
             om.CompleteOrder(true, orderLocation);
         }
+
+        for (int i = 0; i < order.Count; i++)
+        {
+            dishAmount[i].text = Game_Manager.dishes[dishIDs[i]] + "/" + order[i];
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)

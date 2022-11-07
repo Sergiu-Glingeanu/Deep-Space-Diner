@@ -25,7 +25,7 @@ public class FollowGrid : MonoBehaviour
 
     private void OnMouseDown()
     {
-        _moving = true;
+        if (!Game_Manager.dayTime) _moving = true;
     }
 
     private void FollowMouse()

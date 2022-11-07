@@ -8,7 +8,10 @@ public class Open_UI : MonoBehaviour
 
     public void OnMouseUpAsButton()
     {
-        uiOpen.SetActive(true);
-        uiClose.SetActive(false);
+        if (Game_Manager.dayTime)
+        {
+            uiOpen.SetActive(true);
+            uiClose.SetActive(false);
+        }
     }
 }

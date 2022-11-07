@@ -7,4 +7,5 @@ public class Dish_Info : MonoBehaviour
     public Sprite dishImage;
     public int[] plantID, amount;
     public int dishID;
+    public int price;
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5144518647632682038}
   - component: {fileID: 2621475755779369839}
   m_Layer: 0
-  m_Name: Banana Bread
+  m_Name: Banana Bread 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,3 +48,4 @@ MonoBehaviour:
   plantID: 00000000
   amount: 02000000
   dishID: 3
+  price: 2

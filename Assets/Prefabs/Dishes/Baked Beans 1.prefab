@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5144518647632682038}
   - component: {fileID: 2621475755779369839}
   m_Layer: 0
-  m_Name: Apple Pie
+  m_Name: Baked Beans 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0be4916ee5ec7e40947792d15f06ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dishImage: {fileID: 21300000, guid: ccc06b360616dac4fb4c412520f1c58d, type: 3}
+  dishImage: {fileID: 21300000, guid: cc0ddaf6c15cedc4c99907749c180339, type: 3}
   plantID: 00000000
   amount: 02000000
-  dishID: 1
+  dishID: 2
+  price: 1

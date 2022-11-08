@@ -22,5 +22,6 @@ public class Drag_From_Shop : MonoBehaviour, IPointerDownHandler
         temp.transform.position = new Vector3(transform.position.x, transform.position.y, 1);
         temp.GetComponent<SeedBag>().ui = ui;
         ui.SetActive(false);
+        
     }
 }

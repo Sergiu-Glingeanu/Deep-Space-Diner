@@ -13,6 +13,7 @@ public class Shop_UI : MonoBehaviour
 
     public int differenceX, differenceY;
     public int itemsPerRow;
+    public Game_Manager gm;
 
     public void ShowSeeds()
     {
@@ -32,6 +33,7 @@ public class Shop_UI : MonoBehaviour
                 GameObject seedBag = Instantiate(seeds[i], scrollView);
                 seedBag.transform.localPosition = new Vector3(200 + j * differenceX, -100 - differenceY * i, 0);
                 _currentItemsInShop.Add(seedBag);
+                seedBag.GetComponent<BuyItem>().gm = gm;
                 itemsPlaced += 1;
 
                 if (itemsPlaced == seeds.Count) break;

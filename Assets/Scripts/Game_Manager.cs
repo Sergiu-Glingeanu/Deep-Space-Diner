@@ -26,6 +26,9 @@ public class Game_Manager : MonoBehaviour
     public static List<Farm_Tile> farmTiles;
     public static int money;
 
+    public Order_Manager om;
+    public Cooking_Manager cm;
+
     void Start()
     {
         for(int i = 0; i < plantsInGame; i++)
@@ -83,5 +86,20 @@ public class Game_Manager : MonoBehaviour
         {
             dishes[i] = 0;
         }
+    }
+
+    public void BuySeed(int seedID)
+    {
+
+    }
+
+    public void BuyRecipe(int recipeID)
+    {
+
+    }
+
+    public void BuyUpgrade(int upgradeID)
+    {
+
     }
 }

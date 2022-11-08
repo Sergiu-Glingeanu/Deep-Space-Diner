@@ -22,6 +22,7 @@ public class FollowGrid : MonoBehaviour
         {
             _moving = false;
             if (_insideObject) transform.position = _oldLocation;
+            _oldLocation = transform.position;
         }
 
         if (_moving) FollowMouse();

@@ -7,6 +7,9 @@ public class Cooking_Manager : MonoBehaviour
 {
     public List<GameObject> queue;
     public List<Image> images;
+    public List<GameObject> recipes;
+    public Transform content;
+    public int difference;
     public Image circle;
     public int maxQueue;
 
@@ -14,9 +17,9 @@ public class Cooking_Manager : MonoBehaviour
 
     private float _timePassed;
 
-    void Update()
+    private void Start()
     {
-        
+        UpdateRecipes();
     }
 
     public void AddDishToQueue(int dishID)
@@ -75,5 +78,14 @@ public class Cooking_Manager : MonoBehaviour
             images[i].sprite = images[i + 1].sprite;
         }
         if (queue.Count > 0) StartCoroutine(CookDishes());
+    }
+
+    public void UpdateRecipes()
+    {
+        for (int i = 0; i < recipes.Count; i++)
+        {
+            GameObject temp = Instantiate(recipes[i], content);
+            temp.transform.localPosition = new Vector3(250, -100 - (difference * i), 0);
+        }
     }
 }

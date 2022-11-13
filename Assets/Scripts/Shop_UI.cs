@@ -35,7 +35,6 @@ public class Shop_UI : MonoBehaviour
                 _currentItemsInShop.Add(seedBag);
                 seedBag.GetComponent<BuyItem>().gm = gm;
                 itemsPlaced += 1;
-                Debug.Log(itemsPlaced);
 
                 if (itemsPlaced == seeds.Count) break;
             }

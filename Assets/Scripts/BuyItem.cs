@@ -6,27 +6,31 @@ public class BuyItem : MonoBehaviour
 {
     public Game_Manager gm;
 
-    public int tag;
+    public int ID, price;
 
-    public void SetTag(int tag)
+    public void Buy()
     {
-        this.tag = tag;
-    }
-    public void Buy(int ID)
-    {
-        switch (tag)
+        if (price <= Game_Manager.money)
         {
-            case 0:
-                gm.BuySeed(ID);
-                break;
+            switch (gameObject.tag)
+            {
+                case "shop_seed":
+                    gm.BuySeed(ID);
+                    Destroy(gameObject);
+                    break;
 
-            case 1:
-                gm.BuyRecipe(ID);
-                break;
+                case "shop_recipe":
+                    gm.BuyRecipe(ID);
+                    Destroy(gameObject);
+                    break;
 
-            case 2:
-                gm.BuyUpgrade(ID);
-                break;
+                case "shop_upgrade":
+                    gm.BuyUpgrade(ID);
+                    Destroy(gameObject);
+                    break;
+            }
+
+            Game_Manager.money -= price;
         }
     }
 }

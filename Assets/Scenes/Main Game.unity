@@ -220,11 +220,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seeds:
   - {fileID: 1204949896906077394, guid: ad7c8c951ac55304c8942800923aa7be, type: 3}
-  - {fileID: 1204949896906077394, guid: ad7c8c951ac55304c8942800923aa7be, type: 3}
-  - {fileID: 1204949896906077394, guid: ad7c8c951ac55304c8942800923aa7be, type: 3}
-  - {fileID: 1204949896906077394, guid: ad7c8c951ac55304c8942800923aa7be, type: 3}
-  - {fileID: 1204949896906077394, guid: ad7c8c951ac55304c8942800923aa7be, type: 3}
-  - {fileID: 1204949896906077394, guid: ad7c8c951ac55304c8942800923aa7be, type: 3}
   recipes: []
   farm: []
   upgrades: []
@@ -232,7 +227,7 @@ MonoBehaviour:
   differenceX: 350
   differenceY: 350
   itemsPerRow: 5
-  gm: {fileID: 0}
+  gm: {fileID: 1493314288}
 --- !u!1 &25809705
 GameObject:
   m_ObjectHideFlags: 0
@@ -5907,11 +5902,26 @@ MonoBehaviour:
   dishesInGame: 1
   dishesPrefabs:
   - {fileID: 7909478019088878639, guid: 48f876849d519404a84be2ed920bf86e, type: 3}
+  seeds:
+  - {fileID: 3032592535100588738, guid: 53477053122d98e4ca706622d4547e18, type: 3}
+  - {fileID: 3032592535100588738, guid: fbb62fbe7f2e04c4b9d9397f79b852f1, type: 3}
+  - {fileID: 3032592535100588738, guid: f8bc4448423eeb24882248ea98030797, type: 3}
+  - {fileID: 3032592535100588738, guid: dd7ee6ddb5b1def4cb4dc0ebdc614ea4, type: 3}
+  - {fileID: 3032592535100588738, guid: c43cd0dc0605f5743b7e29f0e4e71a11, type: 3}
+  recipes: []
+  upgardes: []
   grid: {fileID: 1192802577}
   clock: {fileID: 1973019919}
   moneyText: {fileID: 1278134605}
-  om: {fileID: 0}
-  cm: {fileID: 0}
+  om: {fileID: 991621396}
+  cm: {fileID: 500774732}
+  shop: {fileID: 18635596}
+  shopSeeds:
+  - {fileID: 1204949896906077394, guid: ad7c8c951ac55304c8942800923aa7be, type: 3}
+  - {fileID: 1204949896906077394, guid: ad7c8c951ac55304c8942800923aa7be, type: 3}
+  - {fileID: 1204949896906077394, guid: ad7c8c951ac55304c8942800923aa7be, type: 3}
+  shopRecipes: []
+  shopUpgrades: []
 --- !u!4 &1493314289
 Transform:
   m_ObjectHideFlags: 0

@@ -30,10 +30,11 @@ public class Shop_UI : MonoBehaviour
         {
             for (int j = 0; j < itemsPerRow; j ++)
             {
-                GameObject seedBag = Instantiate(seeds[i], scrollView);
+                GameObject seedBag = Instantiate(seeds[itemsPlaced], scrollView);
                 seedBag.transform.localPosition = new Vector3(200 + j * differenceX, -100 - differenceY * i, 0);
                 _currentItemsInShop.Add(seedBag);
                 seedBag.GetComponent<BuyItem>().gm = gm;
+                seedBag.GetComponent<BuyItem>().shop = this;
                 itemsPlaced += 1;
 
                 if (itemsPlaced == seeds.Count) break;
@@ -56,9 +57,11 @@ public class Shop_UI : MonoBehaviour
         {
             for (int j = 0; j < itemsPerRow; j++)
             {
-                GameObject recipe = Instantiate(recipes[i], scrollView);
+                GameObject recipe = Instantiate(recipes[itemsPlaced], scrollView);
                 recipe.transform.localPosition = new Vector3(200 + j * differenceX, -100 - differenceY * i, 0);
                 _currentItemsInShop.Add(recipe);
+                recipe.GetComponent<BuyItem>().gm = gm;
+                recipe.GetComponent<BuyItem>().shop = this;
                 itemsPlaced += 1;
 
                 if (itemsPlaced == recipes.Count) break;
@@ -81,7 +84,7 @@ public class Shop_UI : MonoBehaviour
         {
             for (int j = 0; j < itemsPerRow; j++)
             {
-                GameObject farmItem = Instantiate(farm[i], scrollView);
+                GameObject farmItem = Instantiate(farm[itemsPlaced], scrollView);
                 farmItem.transform.localPosition = new Vector3(200 + j * differenceX, -100 - differenceY * i, 0);
                 _currentItemsInShop.Add(farmItem);
                 itemsPlaced += 1;
@@ -106,9 +109,11 @@ public class Shop_UI : MonoBehaviour
         {
             for (int j = 0; j < itemsPerRow; j++)
             {
-                GameObject upgrade = Instantiate(upgrades[i], scrollView);
+                GameObject upgrade = Instantiate(upgrades[itemsPlaced], scrollView);
                 upgrade.transform.localPosition = new Vector3(200 + j * differenceX, -100 - differenceY * i, 0);
                 _currentItemsInShop.Add(upgrade);
+                upgrade.GetComponent<BuyItem>().gm = gm;
+                upgrade.GetComponent<BuyItem>().shop = this;
                 itemsPlaced += 1;
 
                 if (itemsPlaced == upgrades.Count) break;

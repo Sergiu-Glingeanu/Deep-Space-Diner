@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Seed Bag
+  - shop_seed
+  - shop_recipe
+  - shop_upgrade
   layers:
   - Default
   - TransparentFX

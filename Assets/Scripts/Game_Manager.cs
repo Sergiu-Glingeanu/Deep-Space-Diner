@@ -18,6 +18,7 @@ public class Game_Manager : MonoBehaviour
     public static Dictionary<int, int> dishes = new Dictionary<int, int>();
 
     public List<GameObject> dishesPrefabs;
+    public List<GameObject> seeds, recipes, upgardes;
 
     public Grid grid;
     public Transform clock;
@@ -28,6 +29,9 @@ public class Game_Manager : MonoBehaviour
 
     public Order_Manager om;
     public Cooking_Manager cm;
+    public Shop_UI shop;
+
+    public List<GameObject> shopSeeds, shopRecipes, shopUpgrades;
 
     void Start()
     {
@@ -90,16 +94,19 @@ public class Game_Manager : MonoBehaviour
 
     public void BuySeed(int seedID)
     {
-
+        shop.seeds.Remove(shopSeeds[seedID]);
+        shop.ShowSeeds();
     }
 
     public void BuyRecipe(int recipeID)
     {
-
+        shop.recipes.Remove(shopRecipes[recipeID]);
+        shop.ShowRecipes();
     }
 
     public void BuyUpgrade(int upgradeID)
     {
-
+        shop.upgrades.Remove(shopUpgrades[upgradeID]);
+        shop.ShowUpgrades();
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 867904469135554994}
   - component: {fileID: 7954457837215411060}
   m_Layer: 5
-  m_Name: Beans
+  m_Name: Banana
   m_TagString: shop_seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4abeb3d49a27adb4eab8a5c28206e5c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 30854e623440a5f4289dbba342bad906, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
-  ID: 2
+  ID: 1
   price: 0
 --- !u!114 &7954457837215411060
 MonoBehaviour:

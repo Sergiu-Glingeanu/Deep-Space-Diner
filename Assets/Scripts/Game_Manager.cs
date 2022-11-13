@@ -9,7 +9,7 @@ public class Game_Manager : MonoBehaviour
 
     public int dayDuraton;
 
-    public GameObject dayUI, nightUI;
+    public GameObject dayUI, nightUI, clockObject;
 
     private float _timePassed;
 
@@ -30,8 +30,10 @@ public class Game_Manager : MonoBehaviour
     public Order_Manager om;
     public Cooking_Manager cm;
     public Shop_UI shop;
+    public SeedBag_UI seedBagUI;
 
-    public List<GameObject> shopSeeds, shopRecipes, shopUpgrades;
+    public List<GameObject> shopSeeds, shopRecipes, shopUpgrades, seedUISeeds;
+
 
     void Start()
     {
@@ -67,12 +69,15 @@ public class Game_Manager : MonoBehaviour
         dayUI.SetActive(true);
         dayTime = true;
         _timePassed = 0f;
+        clockObject.SetActive(true);
+        
     }
 
     public void EndDay()
     {
         nightUI.SetActive(true);
         dayUI.SetActive(false);
+        clockObject.SetActive(false);
         dayTime = false;
         foreach (Farm_Tile a in farmTiles)
         {
@@ -96,6 +101,9 @@ public class Game_Manager : MonoBehaviour
     {
         shop.seeds.Remove(shopSeeds[seedID]);
         shop.ShowSeeds();
+        seedUISeeds[seedID].GetComponent<Drag_From_Shop>().ui = dayUI;
+        seedBagUI.seeds.Add(seedUISeeds[seedID]);
+        seedBagUI.UpdateUI();
     }
 
     public void BuyRecipe(int recipeID)

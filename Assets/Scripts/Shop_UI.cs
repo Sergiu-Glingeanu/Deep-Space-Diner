@@ -34,8 +34,8 @@ public class Shop_UI : MonoBehaviour
                 seedBag.transform.localPosition = new Vector3(200 + j * differenceX, -100 - differenceY * i, 0);
                 _currentItemsInShop.Add(seedBag);
                 seedBag.GetComponent<BuyItem>().gm = gm;
-                seedBag.GetComponent<BuyItem>().shop = this;
                 itemsPlaced += 1;
+                Debug.Log(itemsPlaced);
 
                 if (itemsPlaced == seeds.Count) break;
             }
@@ -61,7 +61,6 @@ public class Shop_UI : MonoBehaviour
                 recipe.transform.localPosition = new Vector3(200 + j * differenceX, -100 - differenceY * i, 0);
                 _currentItemsInShop.Add(recipe);
                 recipe.GetComponent<BuyItem>().gm = gm;
-                recipe.GetComponent<BuyItem>().shop = this;
                 itemsPlaced += 1;
 
                 if (itemsPlaced == recipes.Count) break;
@@ -113,7 +112,6 @@ public class Shop_UI : MonoBehaviour
                 upgrade.transform.localPosition = new Vector3(200 + j * differenceX, -100 - differenceY * i, 0);
                 _currentItemsInShop.Add(upgrade);
                 upgrade.GetComponent<BuyItem>().gm = gm;
-                upgrade.GetComponent<BuyItem>().shop = this;
                 itemsPlaced += 1;
 
                 if (itemsPlaced == upgrades.Count) break;

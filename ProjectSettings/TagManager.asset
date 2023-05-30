@@ -8,6 +8,7 @@ TagManager:
   - shop_seed
   - shop_recipe
   - shop_upgrade
+  - shop_farm
   layers:
   - Default
   - TransparentFX

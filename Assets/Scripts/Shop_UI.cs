@@ -7,7 +7,7 @@ public class Shop_UI : MonoBehaviour
 {
     public List<GameObject> seeds, recipes, farm, upgrades;
 
-    public Transform scrollView;
+    public RectTransform scrollView;
 
     private List<GameObject> _currentItemsInShop = new List<GameObject>();
 
@@ -25,6 +25,8 @@ public class Shop_UI : MonoBehaviour
 
         int rows = Mathf.CeilToInt((float)seeds.Count / (float)itemsPerRow);
         int itemsPlaced = 0;
+        scrollView.sizeDelta = new Vector2(0, 200 + (rows - 1) * differenceY);
+        
 
         for (int i = 0; i < rows; i ++)
         {
@@ -51,6 +53,7 @@ public class Shop_UI : MonoBehaviour
 
         int rows = Mathf.CeilToInt((float)recipes.Count / (float)itemsPerRow);
         int itemsPlaced = 0;
+        scrollView.sizeDelta = new Vector2(0, 200 + (rows - 1) * differenceY);
 
         for (int i = 0; i < rows; i++)
         {
@@ -77,6 +80,7 @@ public class Shop_UI : MonoBehaviour
 
         int rows = Mathf.CeilToInt((float)farm.Count / (float)itemsPerRow);
         int itemsPlaced = 0;
+        scrollView.sizeDelta = new Vector2(0, 200 + (rows - 1) * differenceY);
 
         for (int i = 0; i < rows; i++)
         {
@@ -85,6 +89,7 @@ public class Shop_UI : MonoBehaviour
                 GameObject farmItem = Instantiate(farm[itemsPlaced], scrollView);
                 farmItem.transform.localPosition = new Vector3(200 + j * differenceX, -100 - differenceY * i, 0);
                 _currentItemsInShop.Add(farmItem);
+                farmItem.GetComponent<BuyItem>().gm = gm;
                 itemsPlaced += 1;
 
                 if (itemsPlaced == farm.Count) break;
@@ -102,6 +107,7 @@ public class Shop_UI : MonoBehaviour
 
         int rows = Mathf.CeilToInt((float)upgrades.Count / (float)itemsPerRow);
         int itemsPlaced = 0;
+        scrollView.sizeDelta = new Vector2(0, 200 + (rows - 1) * differenceY);
 
         for (int i = 0; i < rows; i++)
         {

@@ -34,6 +34,9 @@ public class Game_Manager : MonoBehaviour
 
     public List<GameObject> shopSeeds, shopRecipes, shopUpgrades, seedUISeeds;
 
+    public Storage storage;
+    public List<GameObject> decorations;
+
 
     void Start()
     {
@@ -46,6 +49,8 @@ public class Game_Manager : MonoBehaviour
         {
             dishes.Add(i, 0);
         }
+
+        decorations[0].GetComponent<FollowGrid>().grid = grid;
     }
     void Update()
     {
@@ -112,9 +117,20 @@ public class Game_Manager : MonoBehaviour
         shop.ShowRecipes();
     }
 
+    public void BuyDecoration(int decorationID)
+    {
+        
+        storage.AddToStorage(decorations[decorationID]);
+    }
+
     public void BuyUpgrade(int upgradeID)
     {
         shop.upgrades.Remove(shopUpgrades[upgradeID]);
         shop.ShowUpgrades();
+    }
+
+    public void UpdateStorageUI()
+    {
+
     }
 }

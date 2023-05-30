@@ -24,6 +24,10 @@ public class BuyItem : MonoBehaviour
                     Destroy(gameObject);
                     break;
 
+                case "shop_farm":
+                    gm.BuyDecoration(ID);
+                    break;
+
                 case "shop_upgrade":
                     gm.BuyUpgrade(ID);
                     Destroy(gameObject);

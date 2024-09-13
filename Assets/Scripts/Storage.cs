@@ -16,6 +16,8 @@ public class Storage : MonoBehaviour
 
     List<GameObject> _currentItems = new List<GameObject>();
 
+    public Game_Manager gm;
+
     public void Start()
     {
         UpdateStorage();

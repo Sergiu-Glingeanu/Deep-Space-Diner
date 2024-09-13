@@ -478,13 +478,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1298b3e3c209f47bf81f944040c00d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
-  amount: 
+  items:
+  - {fileID: 1204949896906077394, guid: eb42a82675db4d24582d897d990ab659, type: 3}
+  amount: 01000000
   baseText: {fileID: 9080560606961400713, guid: 7e5b1a8a42735784dbd840b479081ab4, type: 3}
   differenceX: 200
   differenceY: 300
   itemsPerRow: 3
   scrollView: {fileID: 92723008}
+  gm: {fileID: 0}
 --- !u!1 &92723007
 GameObject:
   m_ObjectHideFlags: 0
